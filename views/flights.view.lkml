@@ -16,6 +16,18 @@ view: flights {
     sql: ${TABLE}.arr_delay ;;
   }
 
+  dimension_group: filter_ui_test{
+    type: time
+    sql: ${TABLE}.date ;;
+    description: "filter_ui_test"
+    datatype: timestamp
+    timeframes: [
+      date,
+      week,
+      month
+    ]
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
